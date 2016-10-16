@@ -1,6 +1,6 @@
 {
-  "name": "bdhp-proto",
-  "version": "0.0.0",
+  "name": "keystone-angular2-webpack-starter",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "@angular/common": "~2.0.0",

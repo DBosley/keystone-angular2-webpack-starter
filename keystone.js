@@ -17,8 +17,8 @@ console.log("Environment:" + process.env.NODE_ENV);
 var isDev = process.env.NODE_ENV == 'development' ;
 
 keystone.init({
-	'name': 'bdhp-proto',
-	'brand': 'bdhp-proto',
+	'name': 'keystone-angular2-webpack-starter',
+	'brand': 'keystone-angular2-webpack-starter',
 
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
@@ -29,7 +29,7 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
-	'cookie secret': 'poop'
+	'cookie secret': '(my secret)'
 });
 // Load your project's Models
 keystone.import('models');
