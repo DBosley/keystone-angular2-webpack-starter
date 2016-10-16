@@ -1,2 +1,6 @@
-# bdhp-proto
-big dogs huge paws website redesign prototype
+# keystone-angular2-webpack-starter
+Starter pack for building Angular 2 ui with a headless keystone back-end.
+
+A lot of ideas and some code was borrowed from these resources:
+[preboot/angular2-webpack](https://github.com/preboot/angular2-webpack)
+[patrikholcak/trinity](https://github.com/patrikholcak/trinity)
