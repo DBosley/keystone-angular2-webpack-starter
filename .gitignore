@@ -35,3 +35,9 @@ node_modules
 
 # Ignore vscode settings
 .vscode
+
+# Ignore typings
+typings
+
+# Ignore generated docs
+doc

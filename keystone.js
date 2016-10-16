@@ -19,8 +19,8 @@ keystone.init({
 	'name': 'keystone-angular2-webpack-starter',
 	'brand': 'keystone-angular2-webpack-starter',
 
-	'static': 'public',
-	'favicon': 'public/favicon.ico',
+	'static': 'src/public',
+	'favicon': 'src/public/favicon.ico',
 
 	'emails': 'templates/emails',
 

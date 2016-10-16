@@ -51,7 +51,7 @@ module.exports = function makeWebpackConfig() {
 		'app': [
 				'webpack/hot/dev-server',
 				//'webpack-dev-server/client?http://localhost:8080',
-    			'webpack-hot-middleware/client',
+				'webpack-hot-middleware/client',
 				'./src/main.ts'
 			] // our angular app
 	};
@@ -149,7 +149,8 @@ module.exports = function makeWebpackConfig() {
 			// todo: change the loader to something that adds a hash to images
 			{
 				test: /\.html$/,
-				loader: 'raw'
+				loader: 'raw',
+				exclude: root('src', 'public')
 			}
 		]
 	};
@@ -231,9 +232,9 @@ module.exports = function makeWebpackConfig() {
 
 	if (!isTest && !isProd) {
 		config.plugins.push(
-      new DashboardPlugin(),
-      new webpack.HotModuleReplacementPlugin()
-    );
+			new DashboardPlugin(),
+			new webpack.HotModuleReplacementPlugin()
+		);
 	}
 
 	if (!isTest && !isTestWatch) {
@@ -282,9 +283,26 @@ module.exports = function makeWebpackConfig() {
 				mangle: {
 					keep_fnames: true
 				}
-			})
+			}),
+			// Copy assets from the public folder
+			// Reference: https://github.com/kevlened/copy-webpack-plugin
+			new CopyWebpackPlugin([{
+				from: root('src/public')
+			}])
 		);
 	}
+
+	/**
+	 * Dev server configuration
+	 * Reference: http://webpack.github.io/docs/configuration.html#devserver
+	 * Reference: http://webpack.github.io/docs/webpack-dev-server.html
+	 */
+	config.devServer = {
+		contentBase: './src/public',
+		historyApiFallback: true,
+		quiet: true,
+		stats: 'minimal' // none (or false), errors-only, minimal, normal (or true) and verbose
+	};
 
 	return config;
 }();

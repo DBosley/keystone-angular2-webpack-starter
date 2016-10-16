@@ -17,8 +17,16 @@ module.exports = function (config) {
 
     // list of files / patterns to load in the browser
     files: [
-      { pattern: './karma-shim.js', watched: false }
+      { pattern: './src/public/**/*.*', watched: false, included: false, served: true },
+      { pattern: './karma-shim.js', watched: false },
     ],
+    
+    
+    proxies: {
+      '/favicon.ico' : '/base/src/public/favicon.ico',
+      '/service-worker.js' : '/base/src/public/service-worker.js',
+      '/img/' : '/base/src/public/img/',
+    },
 
     // list of files to exclude
     exclude: [],
