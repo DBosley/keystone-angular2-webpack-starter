@@ -1,8 +1,9 @@
 exports.config = {
-  baseUrl: 'http://localhost:8080/',
-
+  baseUrl: 'http://localhost:3000/',
+  chromeDriver: './node_modules/chromedriver/lib/chromedriver/chromedriver.exe',
+  seleniumAddress: 'http://localhost:4444/wd/hub',
   specs: [
-    'ng2/**/*.e2e-spec.js'
+    'src/**/*.e2e-spec.js'
   ],
   exclude: [],
 
@@ -19,9 +20,14 @@ exports.config = {
   },
   directConnect: true,
 
-  capabilities: {
-    'browserName': 'chrome'
-  },
+  multiCapabilities: [{
+    'browserName': 'chrome',
+    'chromeOptions': {
+                binary: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
+                args: [],
+                extensions: [],
+            }
+  }],
 
   onPrepare: function () {
     var SpecReporter = require('jasmine-spec-reporter');
