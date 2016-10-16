@@ -3,7 +3,6 @@ require('dotenv').config();
 var keystone = require('keystone'),
 	webpack = require('webpack'),
 	MemoryFS = require("memory-fs"),
-	cons = require('consolidate'),
 	path = require('path'),
 	devMiddleware = require('webpack-dev-middleware'),
 	hotMiddleware = require('webpack-hot-middleware'),
