@@ -16,7 +16,6 @@
   "files":[
     "src/main.ts",
     "src/polyfills.ts",
-    "src/vendor.ts",
-    "typings/index.d.ts"
+    "src/vendor.ts"
   ]
 }
