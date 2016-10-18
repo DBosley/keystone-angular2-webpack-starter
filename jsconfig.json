@@ -12,8 +12,8 @@
 		"jspm_packages",
 		"tmp",
 		"temp",
-        "dist",
-        "coverage",
-        "doc"
+		"dist",
+		"coverage",
+		"doc"
 	]
 }
