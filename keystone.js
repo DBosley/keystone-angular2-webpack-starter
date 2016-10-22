@@ -29,7 +29,7 @@ keystone.init({
     'session': true,
     'auth': true,
     'user model': 'User',
-    'cookie secret': '(my secret)'
+    'cookie secret': procss.env.COOKIE_SECRET || '(my secret)'
 });
 
 // Load your project's Models
