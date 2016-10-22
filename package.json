@@ -20,6 +20,7 @@
     "ci": "npm run e2e && npm run test",
     "docs": "typedoc --options typedoc.json src/app/app.component.ts",
     "start": "node keystone",
+    "start-db": "mongod --dbpath C:\\mongo-data\\db",
     "postinstall": "npm run webdriver-update"
   },
   "dependencies": {
