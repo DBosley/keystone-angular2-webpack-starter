@@ -49,11 +49,13 @@ module.exports = function makeWebpackConfig() {
         'polyfills': './src/polyfills.ts',
         'vendor': './src/vendor.ts',
         'app': [
-                'webpack/hot/dev-server',
-                'webpack-hot-middleware/client',
                 './src/main.ts'
             ] // our angular app
     };
+
+    if(!isTest && !isProd){
+        config.entry.app.push('webpack-hot-middleware/client');
+    }
 
     /**
      * Output
@@ -292,21 +294,6 @@ module.exports = function makeWebpackConfig() {
             }])
         );
     }
-
-    /**
-     * Dev server configuration
-     * Reference: http://webpack.github.io/docs/configuration.html#devserver
-     * Reference: http://webpack.github.io/docs/webpack-dev-server.html
-     */
-    config.devServer = {
-        contentBase: './src/public',
-		devtool: "source-map",
-		inline: true,
-        historyApiFallback: true,
-        quiet: true,
-        stats: 'minimal', // none (or false), errors-only, minimal, normal (or true) and verbose
-        hot: true
-    };
 
     return config;
 }();

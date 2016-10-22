@@ -41,7 +41,7 @@
     "node-sass-middleware": "^0.9.7",
     "reflect-metadata": "^0.1.8",
     "rxjs": "5.0.0-beta.12",
-    "zone.js": "~0.6.17"
+    "zone.js": "^0.6.26"
   },
   "devDependencies": {
     "@angularclass/hmr": "^1.0.1",
