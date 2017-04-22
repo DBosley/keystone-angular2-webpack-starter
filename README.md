@@ -1,3 +1,7 @@
+THIS PROJECT IS NOT ACTIVELY MAINTAINED. USE AT YOUR OWN RISK.
+
+I plan on coming back to this and getting it working sooner or later, but for now it's going to be a bit stale.
+
 # keystone-angular2-webpack-starter
 Starter pack for building Angular 2 ui with a headless keystone back-end.
 
